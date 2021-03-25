@@ -11,11 +11,22 @@ namespace ConsoleIU
 
         {
             CarManager carManager = new CarManager(new EfCarDal());
-
             foreach (var car in carManager.GetAll())
             {
                 Console.WriteLine(car.Description);
-            } 
+            }
+
+            ColorManager colorManager = new ColorManager(new EfColorDal());
+            foreach (var color in colorManager.GetAll())
+            {
+                Console.WriteLine(color.ColorName);
+            }
+
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            foreach (var brand in brandManager.GetAll())
+            {
+                Console.WriteLine(brand.BrandName);
+            }
         }
     }
 }
